@@ -17,10 +17,13 @@ namespace RestaurantApp_Team_17_31_43
     {
         static List<Restaurant> restaurants = new List<Restaurant>
     {
-        new Restaurant { Name = "KFC", Type = "Fast Food", Rating = 4.2 },
-        new Restaurant { Name = "MK", Type = "Suki", Rating = 4.7 },
-        new Restaurant { Name = "Fuji", Type = "Japanese", Rating = 4.8 }
-       
+        new Restaurant { Name = "Pupen Seafood", Type = "Sea Food", Rating = 4.3},
+        new Restaurant { Name = "Tandoori", Type = "Indian Cuisine", Rating = 4.8},
+        new Restaurant { Name = "Suki Teenoi", Type = "Shabu", Rating = 4.8},
+        new Restaurant { Name = "Isao", Type = "Japanese Fusion", Rating = 4.5},
+        new Restaurant { Name = "Supanniga", Type = "Traditional Thai Cuisine", Rating = 4.4},
+        new Restaurant { Name = "Greyhound", Type = "Modern Thai", Rating = 4.2}
+
     };
 
         static void Main(string[] args)
@@ -59,7 +62,24 @@ namespace RestaurantApp_Team_17_31_43
         // คน A รับผิดชอบ
         static void AddRestaurant()
         {
-            Console.WriteLine("Not completed");
+            Console.Write("Enter Restaurant Name: ");
+            string name = Console.ReadLine();
+
+            Console.Write("Enter Type: ");
+            string type = Console.ReadLine();
+
+            Console.Write("Enter Rating: ");
+            double rating = Convert.ToDouble(Console.ReadLine());
+
+            // เพิ่มข้อมูลร้านใหม่เข้าไปใน List
+            restaurants.Add(new Restaurant
+            {
+                Name = name,
+                Type = type,
+                Rating = rating
+            });
+
+            Console.WriteLine("Restaurant added successfully!");
         }
 
         // คน B รับผิดชอบ
