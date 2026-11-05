@@ -71,7 +71,20 @@ namespace RestaurantApp_Team_17_31_43
         // คน C รับผิดชอบ
         static void ShowSummary()
         {
-            Console.WriteLine("Not completed");
+            Console.WriteLine("\n===== Show Summary =====");
+
+            Restaurant highest = restaurants.OrderByDescending(r => r.Rating).First();
+            Restaurant lowest = restaurants.OrderBy(r => r.Rating).First();
+
+            Console.WriteLine("\nร้านที่มีคะแนนสูงสุด");
+            Console.WriteLine($"Name: {highest.Name}");
+            Console.WriteLine($"Type: {highest.Type}");
+            Console.WriteLine($"Rating: {highest.Rating}");
+
+            Console.WriteLine("\nร้านที่มีคะแนนต่ำสุด");
+            Console.WriteLine($"Name: {lowest.Name}");
+            Console.WriteLine($"Type: {lowest.Type}");
+            Console.WriteLine($"Rating: {lowest.Rating}");
         }
     }
 
