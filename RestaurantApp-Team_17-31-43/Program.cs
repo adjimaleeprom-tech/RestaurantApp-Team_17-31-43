@@ -62,12 +62,22 @@ namespace RestaurantApp_Team_17_31_43
             Console.WriteLine("Not completed");
         }
 
-        // คน B รับผิดชอบ
-        static void ShowGoodRating()
-        {
-            Console.WriteLine("Not completed");
-        }
+        // คน B รับผิดชอ
+            static void ShowGoodRating()
+            {
+                Console.WriteLine("\n===== Good Rating Restaurants =====");
 
+                foreach (var restaurant in restaurants)
+                {
+                    if (restaurant.Rating >= 4.5)
+                    {
+                        Console.WriteLine($"Name: {restaurant.Name}");
+                        Console.WriteLine($"Type: {restaurant.Type}");
+                        Console.WriteLine($"Rating: {restaurant.Rating}");
+                        Console.WriteLine("--------------------------");
+                    }
+                }
+            }
         // คน C รับผิดชอบ
         static void ShowSummary()
         {
